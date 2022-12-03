@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatApp
+spec:
+  selector:
+    matchLabels:
+      app: chatApp
+  template:
+    metadata:
+      labels:
+        app: chatApp
+    spec:
+      containers:
+      - name: chatApp
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: <Port>
